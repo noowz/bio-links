@@ -55,9 +55,12 @@ body * {
 }
 
 #share-button button {
+	display: inline-block;
 	position: absolute;
-	top: 100px;
-	right: 500px;
+	top: 0;
+	right: 0;
+	
+
 	width: 40px;
     height: 40px;
 	font-size: 16px;
@@ -74,8 +77,9 @@ body * {
 }
 
 #profile {
+	position: relative;
 	text-align: center;
-	padding: 24px;
+	margin: 24px 0;
 }
 
 #profile img {

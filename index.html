@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="fr">
+<html lang="en">
 	<head>
 		<title>Fastxyz | DevLinks</title>
 		<meta charset="UTF-8">
@@ -27,16 +27,18 @@
 	</head>
 
 	<body>
-		<div id="container">
+		<main id="container">
 			<div id="profile">
-				<div id="share-button" onclick="share()">
-					<button></button>
-				</div>
+				
+					<img src="./assets/avatar.png" alt="Avatar" draggable="false">
+					<p><b>FASTXYZ</b></p>
+					<p>Web Developer</p>
 
-				<img src="./assets/avatar.png" alt="Avatar" draggable="false">
-
-				<p><b>FASTXYZ</b></p>
-				<p>Web Developer</p>
+					<div id="share-button">
+						<button></button>
+					</div>
+				
+				
 			</div>
 
 			<div id="theme-switcher" onclick="switchTheme()">
@@ -79,11 +81,11 @@
 					<i class="fa-brands fa-spotify"></i>
 				</a>
 			</div>
-
-			<footer>
+		</main>
+		<footer>
 				<p><i class="fa-solid fa-code"></i> Developed with <i class="fa-solid fa-heart"></i> by <a href="https://fastxyz.dev" target="_blank">Fastxyz</a></p>
-			</footer>
-		</div>
+		</footer>
+		
 
 		<script src="./js/main.js"></script>
 	</body>
