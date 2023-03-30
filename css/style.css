@@ -7,6 +7,9 @@
 :root {
 	--text-color: #FFFFFF;
 	--background-color: #36393F;
+	--share-button-icon: url(../assets/share_darkTheme.svg);
+	--share-buton-background-color: #FFFFFF;
+	--share-button-icon-color-hover: rgba(255, 255, 255, 0.2);
 	--theme-switcher-span-background-color: #36393F;
 	--theme-switcher-span-color-hover: rgba(255, 255, 255, 0.2);
 	--theme-switcher-button-icon: url(../assets/moon.svg);
@@ -21,6 +24,9 @@
 .lightTheme {
 	--text-color: #000000;
 	--background-color: #FFFFFF;
+	--share-button-icon: url(../assets/share_lightTheme.svg);
+	--share-buton-background-color: #000000;
+	--share-button-icon-color-hover: rgba(0, 0, 0, 0.2);
 	--theme-switcher-span-background-color: #FFFFFF;
 	--theme-switcher-span-color-hover: rgba(0, 0, 0, 0.2);
 	--theme-switcher-button-icon: url(../assets/sun.svg);
@@ -46,6 +52,25 @@ body * {
 	max-width: 588px;
 	margin: 56px auto 0px;
 	padding: 0 24px;
+}
+
+#shareBtn {
+	position: absolute;
+	top: 100px;
+	right: 500px;
+	width: 40px;
+    height: 40px;
+	font-size: 16px;
+	background-color: var(--share-buton-background-color);
+	background-image: var(--share-button-icon);
+	background-repeat: no-repeat;
+	background-position: center;
+	border: none;
+	border-radius: 50%;
+}
+
+#shareBtn:hover {
+	outline: 8px solid var(--share-button-icon-color-hover);
 }
 
 #profile {
