@@ -4,7 +4,7 @@ function switchTheme() {
 	html.classList.toggle('lightTheme');
 };
 
-document.querySelector('#shareButton').addEventListener('click', event => {
+function share() {
 	try {
 		if (navigator.share) {
 			navigator.share({
@@ -19,4 +19,4 @@ document.querySelector('#shareButton').addEventListener('click', event => {
 	} catch (error) {
 		console.log(`An error occured while using the Web share API!\nError: ${error}`);
 	};
-});
+};
