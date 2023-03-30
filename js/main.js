@@ -4,7 +4,7 @@ function switchTheme() {
 	html.classList.toggle('lightTheme');
 };
 
-document.querySelector('#shareBtn').addEventListener('click', event => {
+document.querySelector('#shareButton').addEventListener('click', event => {
 	try {
 		if (navigator.share) {
 			navigator.share({
