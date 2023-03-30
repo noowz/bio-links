@@ -59,10 +59,8 @@ body * {
 	position: absolute;
 	top: 0;
 	right: 0;
-	
-
 	width: 40px;
-    height: 40px;
+    	height: 40px;
 	font-size: 16px;
 	background-color: var(--share-buton-background-color);
 	background-image: var(--share-button-icon);
