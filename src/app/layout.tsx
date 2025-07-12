@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 		siteName: "Noowz | Bio Links",
 		images: [
 			{
-				url: "https://i.imgur.com/PYzPs5X.png",
+				url: "https://i.imgur.com/fhc27JD.png",
 				width: 1919,
 				height: 866,
 				alt: "Website Preview"
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
 		creatorId: "1294781292622548994",
 		images: [
 			{
-				url: "https://i.imgur.com/PYzPs5X.png",
+				url: "https://i.imgur.com/fhc27JD.png",
 				alt: "Website Preview"
 			}
 		]
