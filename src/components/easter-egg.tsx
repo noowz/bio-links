@@ -1,8 +1,9 @@
 "use client";
 
-import { useToast } from "@/hooks/use-toast";
-import { ReactNode, useState, useEffect } from "react";
 import confetti from "canvas-confetti";
+import { Egg } from "lucide-react";
+import { ReactNode, useEffect, useState } from "react";
+import { toast } from "sonner";
 
 interface EasterEggProps {
 	children: ReactNode;
@@ -13,35 +14,23 @@ export function EasterEgg({
 }: EasterEggProps) {
 	const [easterEggFound, setEasterEggFound] = useState(false);
 
-	const { toast } = useToast();
-
-	function checkEasterEggFound() {
-		return localStorage.getItem("easterEggFound") === "true";
-	};
-
 	useEffect(() => {
-		setEasterEggFound(checkEasterEggFound());
-
-		function handleStorageChange() {
-			setEasterEggFound(checkEasterEggFound());
+		const getEasterEggFound = () => {
+			return localStorage.getItem("easterEggFound") === "true";
 		};
 
-		addEventListener("storage", handleStorageChange);
+		setEasterEggFound(getEasterEggFound());
 
-		const intervalId = setInterval(() => {
-			const isEasterEggFound = checkEasterEggFound();
+		const handleStorageChange = () => {
+			return setEasterEggFound(getEasterEggFound());
+		};
 
-			if (easterEggFound !== isEasterEggFound) {
-				setEasterEggFound(isEasterEggFound);
-			};
-		}, 500);
+		window.addEventListener("storage", handleStorageChange);
 
 		return () => {
 			window.removeEventListener("storage", handleStorageChange);
-
-			clearInterval(intervalId);
 		};
-	}, [easterEggFound]);
+	}, []);
 
 	function triggerConfetti() {
 		if (easterEggFound) {
@@ -56,9 +45,9 @@ export function EasterEgg({
 			}
 		});
 
-		toast({
-			title: "🥚 You found an Easter Egg!",
-			description: "🐰 Enjoy the confetti! This will only happen once."
+		toast("You found an Easter Egg", {
+			description: "Enjoy the confetti, this will only happen once",
+			icon: <Egg />
 		});
 
 		setEasterEggFound(true);
@@ -67,7 +56,11 @@ export function EasterEgg({
 	};
 
 	return (
-		<div onClick={triggerConfetti} className={easterEggFound ? "cursor-auto" : "cursor-pointer"}>
+		<div role="button" tabIndex={0} onKeyDown={event => {
+			if (!easterEggFound && (event.key === "Enter" || event.key === " ")) {
+				triggerConfetti();
+			};
+		}} onClick={triggerConfetti} className={easterEggFound ? "cursor-auto" : "cursor-pointer"}>
 			{children}
 		</div>
 	);

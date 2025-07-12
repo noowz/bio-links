@@ -1,17 +1,31 @@
-import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Toaster } from "@/components/ui/toaster";
+import { Toaster } from "@/components/ui/sonner";
+import { geistSans } from "@/styles/fonts";
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
-
-const geistSans = Geist({
-	subsets: ["latin"]
-});
+import { ReactNode } from "react";
+import "../styles/globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
 	title: "Noowz | Bio Links",
 	description: "Personal profile card that aggregates all the important links in one place. Easily access social media, projects, and content through this sleek, user-friendly page.",
+	keywords: [
+		"bio links",
+		"profile card",
+		"social media",
+		"portfolio",
+		"personal website",
+		"link aggregator",
+		"Noowz"
+	],
+	authors: [
+		{
+			name: "Noowz",
+			url: "https://noowz.dev"
+		}
+	],
+	publisher: "Noowz",
+	robots: "index, follow",
 	openGraph: {
 		title: "Noowz | Bio Links",
 		description: "Personal profile card that aggregates all the important links in one place. Easily access social media, projects, and content through this sleek, user-friendly page.",
@@ -60,18 +74,17 @@ export const metadata: Metadata = {
 export default function RootLayout({
 	children
 }: Readonly<{
-	children: React.ReactNode;
+	children: ReactNode;
 }>) {
 	return (
-		<html lang="en" suppressHydrationWarning>
+		<html lang="en" suppressHydrationWarning className="scroll-smooth">
 			<body className={`${geistSans.className} antialiased`}>
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
 					<main>
 						{children}
 					</main>
 
-					<Toaster />
-
+					<Toaster richColors closeButton />
 					<Analytics />
 				</ThemeProvider>
 			</body>
