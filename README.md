@@ -19,8 +19,8 @@
 
 ## **🖼️ Preview**
 
-![Website - Light Theme](https://i.imgur.com/uK01HmD.png)
-![Website - Dark Theme](https://i.imgur.com/fhc27JD.png)
+![Website - Light Theme](https://i.imgur.com/OworV3w.jpeg)
+![Website - Dark Theme](https://i.imgur.com/QIUUbwR.jpeg)
 
 ---
 
